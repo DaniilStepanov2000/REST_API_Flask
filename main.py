@@ -69,6 +69,12 @@ class UsersWork(Resource):
             return {'message': 'Add some users!'}
         return users
 
+    def get(self, user_id):
+        if user_id in users:
+            return users[user_id]
+        else:
+            return {'message': 'The user with this id is not exist'}
+
     def post(self, user_id):
         args = args_post_parse.parse_args()
         users[user_id] = args
