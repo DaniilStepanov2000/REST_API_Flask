@@ -65,7 +65,7 @@ class PostWork(Resource):
 
 class UsersWork(Resource):
     def get(self):
-        if not bool(users):
+        if not users:
             return {'message': 'Add some users!'}
         return users
 
